@@ -32,9 +32,26 @@ typedef void (^YSLGoogleSuggestViewCallbackHandler)(NSString * word);
 @property (nonatomic, strong) UIColor *tableCellTextColor;
 @property (nonatomic, strong) UIFont  *tableCellFont;
 
+
+/**
+ *  init
+ *
+ *  @param isSaveSearchResult Saved Search History
+ *
+ *  @return self
+ */
 - (id)initWithSaveSearchResult:(BOOL)isSaveSearchResult;
 
+/**
+ *  show suggestView (Delegate)
+ */
+
 - (void)showSuggestView;
+/**
+ *  show suggestView (blocks)
+ *
+ *  @param handler search Result callback
+ */
 - (void)showSuggestViewWithHandler:(YSLGoogleSuggestViewCallbackHandler)handler;
 
 @end
