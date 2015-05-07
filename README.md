@@ -30,7 +30,7 @@ not support landscape
  ```
     
 ### Blocks
-    
+ ``` objective-c
     - (IBAction)searchBtnTap:(id)sender
     {
        YSLGoogleSuggestView *gSuggestView = [[YSLGoogleSuggestView alloc]initWithSaveSearchResult:YES];
@@ -38,9 +38,11 @@ not support landscape
           NSLog(@"Search Word (blocks) %@", word);
        }];
     }
+ ```
     
 ## Property
     
+ ``` objective-c
     gSuggestView.placeholderText = @"Sample";
     gSuggestView.headerBackgroudColor = [UIColor redColor];
     gSuggestView.textFieldBackgroudColor = [UIColor purpleColor];
@@ -51,5 +53,6 @@ not support landscape
     gSuggestView.tableCellFont = [UIFont fontWithName:@"Futura-Medium" size:13];
     gSuggestView.tableCellTextColor = [UIColor darkGrayColor];
     
+ ```
 ## Licence
 MIT
