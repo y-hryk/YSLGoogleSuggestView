@@ -15,7 +15,7 @@ not support landscape
     
     @interface ViewController () <YSLGoogleSuggestViewDelegate>
     
-   - (IBAction)searchBtnTap:(id)sender
+    - (IBAction)searchBtnTap:(id)sender
     {
        YSLGoogleSuggestView *gSuggestView = [[YSLGoogleSuggestView alloc]initWithSaveSearchResult:YES];
         gSuggestView.delegate = self
