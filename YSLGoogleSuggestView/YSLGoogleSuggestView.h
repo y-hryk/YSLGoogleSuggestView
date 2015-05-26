@@ -24,9 +24,12 @@ typedef void (^YSLGoogleSuggestViewCallbackHandler)(NSString * word);
 // header or textField
 @property (nonatomic, strong) UIColor *headerBackgroudColor;
 @property (nonatomic, copy) NSString  *placeholderText;
+@property (nonatomic, copy) UIColor *placeholderTextColor;
 @property (nonatomic, strong) UIColor *textFieldBackgroudColor;
 @property (nonatomic, strong) UIFont  *textFieldFont;
 @property (nonatomic, strong) UIColor *textFieldTextColor;
+@property (nonatomic, strong) UIColor *cancelButtonTextColor;
+
 // tableView
 @property (nonatomic, strong) UIColor *tableBackgroudColor;
 @property (nonatomic, strong) UIColor *tableCellTextColor;

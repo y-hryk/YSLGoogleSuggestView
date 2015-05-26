@@ -36,6 +36,7 @@
     }];
     
     //    gSuggestView.placeholderText = @"Sample";
+    //    gSuggestView.placeholderTextColor = [UIColor greenColor];
     //    gSuggestView.headerBackgroudColor = [UIColor redColor];
     //    gSuggestView.textFieldBackgroudColor = [UIColor purpleColor];
         gSuggestView.textFieldFont = [UIFont fontWithName:@"Futura-Medium" size:13];
@@ -44,6 +45,7 @@
     //    gSuggestView.tableBackgroudColor = [UIColor yellowColor];
         gSuggestView.tableCellFont = [UIFont fontWithName:@"Futura-Medium" size:13];
     //    gSuggestView.tableCellTextColor = [UIColor darkGrayColor];
+    //    gSuggestView.cancelButtonTextColor = [UIColor blueColor];
 }
 
 #pragma mark -- YSLGoogleSuggestView Delegate

@@ -20,6 +20,7 @@ static NSString *const kUserDefaultKeyLastList = @"ud_key_last_list";
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, strong) UIView *headerView;
 @property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, strong) UIButton *cancelBtn;
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, assign) BOOL isSaveSearchResult;
@@ -77,19 +78,28 @@ static NSString *const kUserDefaultKeyLastList = @"ud_key_last_list";
         // textField
         _textField = [[UITextField alloc]init];
         _textField.delegate = self;
-        _textField.frame = CGRectMake(10, 25, self.frame.size.width - 20, 30);
+        _textField.frame = CGRectMake(10, 25, self.frame.size.width - 80, 30);
         _textField.backgroundColor = [UIColor colorWithRed:0.966667 green:0.966667 blue:0.966667 alpha:1.0];
         _textField.placeholder = @""@"search word";
         _textField.returnKeyType = UIReturnKeySearch;
         _textField.borderStyle = UITextBorderStyleRoundedRect;
         _textField.font = [UIFont systemFontOfSize:13];
         [_headerView addSubview:_textField];
-        
+
         // textField Notification
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(textFieldDidChange:)
                                                      name:UITextFieldTextDidChangeNotification
                                                    object:_textField];
+        
+        // button
+        _cancelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        _cancelBtn.frame = CGRectMake(_textField.frame.origin.x + _textField.frame.size.width + 5, 25, 60, 30);
+        [_cancelBtn setTitle:@"Cancel" forState:UIControlStateNormal];
+        [_cancelBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [_cancelBtn addTarget:self action:@selector(endAnimation) forControlEvents:UIControlEventTouchUpInside];
+        [_headerView addSubview:_cancelBtn];
+    
         
         // tableView
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kTopBarHeight, self.frame.size.width, 0)
@@ -119,6 +129,14 @@ static NSString *const kUserDefaultKeyLastList = @"ud_key_last_list";
     _placeholderText = placeholderText;
     _textField.placeholder = _placeholderText;
 }
+
+- (void)setPlaceholderTextColor:(UIColor *)placeholderTextColor
+{
+    if (!placeholderTextColor) { return; }
+    _placeholderTextColor = placeholderTextColor;
+    _textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:_textField.placeholder attributes:@{NSForegroundColorAttributeName : _placeholderTextColor}];
+}
+
 - (void)setTextFieldBackgroudColor:(UIColor *)textFieldBackgroudColor
 {
     if (!textFieldBackgroudColor) { return; }
@@ -138,6 +156,13 @@ static NSString *const kUserDefaultKeyLastList = @"ud_key_last_list";
     if (!textFieldTextColor) { return; }
     _textFieldTextColor = textFieldTextColor;
     _textField.textColor = _textFieldTextColor;
+}
+
+- (void)setCancelButtonTextColor:(UIColor *)cancelButtonTextColor
+{
+    if (!cancelButtonTextColor) { return; }
+    _cancelButtonTextColor = cancelButtonTextColor;
+    [_cancelBtn setTitleColor:_cancelButtonTextColor forState:UIControlStateNormal];
 }
 
 - (void)setTableBackgroudColor:(UIColor *)tableBackgroudColor
