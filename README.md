@@ -44,6 +44,7 @@ not support landscape
     
  ``` objective-c
     gSuggestView.placeholderText = @"Sample";
+    gSuggestView.placeholderTextColor = [UIColor greenColor];
     gSuggestView.headerBackgroudColor = [UIColor redColor];
     gSuggestView.textFieldBackgroudColor = [UIColor purpleColor];
     gSuggestView.textFieldFont = [UIFont fontWithName:@"Futura-Medium" size:13];
@@ -52,7 +53,7 @@ not support landscape
     gSuggestView.tableBackgroudColor = [UIColor yellowColor];
     gSuggestView.tableCellFont = [UIFont fontWithName:@"Futura-Medium" size:13];
     gSuggestView.tableCellTextColor = [UIColor darkGrayColor];
-    
+    gSuggestView.cancelButtonTextColor = [UIColor blueColor];
  ```
 ## Licence
 MIT
